@@ -36,7 +36,7 @@ Get Ready for Heroku
 
 13. Run `heroku create` to create a new Heroku app. The output is a url where Heroku will deploy the server with a pipe followed by the Heroku git repo location.
 
-14. `git remote add heroku [https://git.heroku.com/enigmatic-dusk-01914.git]` The brackets aren't needed and what you input will be different to make sure the repo is created.
+14. `git remote add heroku [https://git.heroku.com/enigmatic-dusk-01914.git]` The brackets aren't needed and what you input may be different to make sure the repo is created.
 
 15. `git push heroku [branch:]main` to deploy the branch to Heroku. NOTE: what will be deployed is the main GitHub branch.
 
