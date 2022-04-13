@@ -38,4 +38,10 @@ Get Ready for Heroku
 
 14. `git remote add heroku [https://git.heroku.com/enigmatic-dusk-01914.git]` The brackets aren't needed and what you input will be different to make sure the repo is created.
 
-15. `git push heroku [branch]` to deploy the branch to Heroku
+15. `git push heroku [branch:]main` to deploy the branch to Heroku. NOTE: what will be deployed is the main GitHub branch.
+
+16. Type in `heroku open` to open the Heroku instance. This is also helpful when pulling up the URL for Heroku.
+
+17. INSTALL Mongoose for MongoDB connections... `npm install --save mongoose`
+
+18. Install Cookies `npm install --save cookie-session`
