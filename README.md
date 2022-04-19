@@ -2,6 +2,23 @@
 
 This repo was created while following this Udemy course: https://www.udemy.com/course/node-with-react-fullstack-web-development.
 
+### Client
+
+Install the dependencies of the client, distinct from the node back-end server.
+
+```sh
+cd ./client/
+npm install
+```
+
+From the root directory of this repo, you can then run the client script.
+
+```sh
+npm run client
+```
+
+### Server
+
 USING THIS CODE
 
 1. run `npm install` for the dependencies to be installed
