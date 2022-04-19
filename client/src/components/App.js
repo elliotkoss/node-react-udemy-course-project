@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header';
+import { Button } from "./styled";
 import Landing from './Landing';
 
 const Dashboard = () => <h2>Dashboard</h2>;
@@ -11,13 +12,13 @@ const SurveyNew = () => <h2>SurveyNew</h2>;
 
 function WalletButton() {
     return (
-        <button
+        <Button
             onClick={() => {
                 console.log('button was clicked')
             }}
         >
             Connect Wallet
-        </button>
+        </Button>
     );
 }
 
