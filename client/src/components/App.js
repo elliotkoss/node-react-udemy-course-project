@@ -10,11 +10,15 @@ const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
 
 function WalletButton() {
+    const [wallet, setWallet] = useState("");
+
     return (
         <li>
             <a className="waves-effect waves-light btn-large" onClick={() => {
                 console.log('button was clicked')
-            }}>Connect Wallet</a>
+            }}>
+                {wallet === "" && "Connect Wallet"}
+            </a>
         </li>
     );
 }
