@@ -31,6 +31,7 @@ import Payments from './Payments';
                     </Link>
                     <ul className="right">
                         {this.renderContent()}
+                        {this.props.children}
                     </ul>
                 </div>
             </nav>
