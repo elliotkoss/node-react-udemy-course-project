@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header';
-import { Button } from "./styled";
 import Landing from './Landing';
 
 const Dashboard = () => <h2>Dashboard</h2>;
@@ -12,13 +11,11 @@ const SurveyNew = () => <h2>SurveyNew</h2>;
 
 function WalletButton() {
     return (
-        <Button
-            onClick={() => {
+        <li>
+            <a className="waves-effect waves-light btn-large" onClick={() => {
                 console.log('button was clicked')
-            }}
-        >
-            Connect Wallet
-        </Button>
+            }}>Connect Wallet</a>
+        </li>
     );
 }
 
@@ -32,8 +29,9 @@ class App extends Component {
             <div className="container">
                 <BrowserRouter>
                     <div>
-                        <Header />
-                        <WalletButton />
+                        <Header>
+                            <WalletButton />
+                        </Header>
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/surveys" component={Dashboard} />
                         <Route path="/surveys/new" component={SurveyNew} />
