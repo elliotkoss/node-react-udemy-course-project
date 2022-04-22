@@ -1,4 +1,5 @@
-import React, { Component, useState } from "react";
+import { shortenAddress, useEthers, useLookupAddress } from "@usedapp/core";
+import React, { Component, useEffect, useState } from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -12,12 +13,36 @@ const SurveyNew = () => <h2>SurveyNew</h2>;
 function WalletButton() {
     const [wallet, setWallet] = useState("");
 
+    const ens = useLookupAddress();
+    const { account, activateBrowserWallet, deactivate, error } = useEthers();
+
+    useEffect(() => {
+        if (ens) {
+            setWallet(ens);
+        } else if (account) {
+            setWallet(shortenAddress(account));
+        } else {
+            setWallet("");
+        }
+    }, [account, ens, setWallet]);
+
+    useEffect(() => {
+        if (error) {
+            console.error("Error while connecting wallet:", error.message);
+        }
+    }, [error]);
+
     return (
-        <li>
-            <a className="waves-effect waves-light btn-large" onClick={() => {
-                console.log('button was clicked')
-            }}>
+        <li onClick={() => {
+            if (!wallet) {
+                activateBrowserWallet();
+            } else {
+                deactivate();
+            }
+        }}>
+            <a className="waves-effect waves-light btn-large">
                 {wallet === "" && "Connect Wallet"}
+                {wallet !== "" && wallet}
             </a>
         </li>
     );
