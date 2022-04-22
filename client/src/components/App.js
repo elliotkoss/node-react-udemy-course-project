@@ -1,5 +1,5 @@
 import { shortenAddress, useEthers, useLookupAddress } from "@usedapp/core";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState, useReducer } from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -12,6 +12,7 @@ const SurveyNew = () => <h2>SurveyNew</h2>;
 
 function WalletButton() {
     const [wallet, setWallet] = useState("");
+    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
 
     const ens = useLookupAddress();
     const { account, activateBrowserWallet, deactivate, error } = useEthers();
@@ -37,6 +38,8 @@ function WalletButton() {
             if (!wallet) {
                 activateBrowserWallet();
             } else {
+                setWallet("");
+                forceUpdate();
                 deactivate();
             }
         }}>
