@@ -10,11 +10,11 @@ import App from './components/App';
 import reducers from './reducers';
 
 // Change this to your own Infura project id: https://infura.io/register
-const INFURA_PROJECT_ID = "defba93b47f748f09fcead8282b9e58e";
+const REACT_APP_INFURA_PROJECT_ID = process.env.REACT_APP_INFURA_PROJECT_ID;
 const config = {
   readOnlyChainId: Mainnet.chainId,
   readOnlyUrls: {
-    [Mainnet.chainId]: "https://mainnet.infura.io/v3/" + INFURA_PROJECT_ID,
+    [Mainnet.chainId]: "https://mainnet.infura.io/v3/" + REACT_APP_INFURA_PROJECT_ID,
   },
 }
 
@@ -27,6 +27,5 @@ root.render(
         <DAppProvider config={config}>
             <App />
         </DAppProvider>
-    </Provider>,
-    document.getElementById("root")
+    </Provider>
 );
