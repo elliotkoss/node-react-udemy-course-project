@@ -45,3 +45,5 @@ Get Ready for Heroku
 17. INSTALL Mongoose for MongoDB connections... `npm install --save mongoose`
 
 18. Install Cookies `npm install --save cookie-session`
+
+19. For Tunneling / webhooks in dev environemnt, install ngrok (https://dashboard.ngrok.com/signup). Once downloaded, commands can only be initiated in the terminal using `./ngrok`, not `ngrok` like the documentation says. To start an HTTP tunnel forwarding for a given port (in this case 5000), use `./ngrok http 5000`. You need to set this up each time you're running it since the http forwarding URL will change each time. 
