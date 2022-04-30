@@ -36,6 +36,14 @@ Get Ready for Heroku
 
 13. Run `heroku create` to create a new Heroku app. The output is a url where Heroku will deploy the server with a pipe followed by the Heroku git repo location.
 
-14. `git remote add heroku [https://git.heroku.com/enigmatic-dusk-01914.git]` The brackets aren't needed and what you input will be different to make sure the repo is created.
+14. `git remote add heroku [https://git.heroku.com/enigmatic-dusk-01914.git]` The brackets aren't needed and what you input may be different to make sure the repo is created.
 
-15. `git push heroku [branch]` to deploy the branch to Heroku
+15. `git push heroku [branch:]main` to deploy the branch to Heroku. NOTE: what will be deployed is the main GitHub branch.
+
+16. Type in `heroku open` to open the Heroku instance. This is also helpful when pulling up the URL for Heroku.
+
+17. INSTALL Mongoose for MongoDB connections... `npm install --save mongoose`
+
+18. Install Cookies `npm install --save cookie-session`
+
+19. For Tunneling / webhooks in dev environemnt, install ngrok (https://dashboard.ngrok.com/signup). Once downloaded, commands can only be initiated in the terminal using `./ngrok`, not `ngrok` like the documentation says. To start an HTTP tunnel forwarding for a given port (in this case 5000), use `./ngrok http 5000`. You need to set this up each time you're running it since the http forwarding URL will change each time. 
